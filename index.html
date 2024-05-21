@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <title>النورس</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-ExtraLight.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-ExtraLight.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-ExtraLight.ttf") format("truetype");
+      font-weight: 200;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-Light.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-Light.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-Light.ttf") format("truetype");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-Regular.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-Regular.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-SemiBold.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-SemiBold.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-SemiBold.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-Bold.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-Bold.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Cairo";
+      src: url("../webfonts/cairo/Cairo-Black.woff2") format("woff2"),
+        url("../webfonts/cairo/Cairo-Black.woff") format("woff"),
+        url("../webfonts/cairo/Cairo-Black.ttf") format("truetype");
+      font-weight: 900;
+      font-style: normal;
+    }
+    body {
+      font-family: "Cairo", sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #292b82;
+    }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .header-invoice {
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      width: 160px;
+      margin: 0;
+    }
+    .logo img {
+      width: 160px;
+    }
+    .order-head {
+      font-weight: 700;
+      font-size: 20px;
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    .order-cont {
+      padding: 0 100px;
+    }
+    .order-data {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 20px;
+    }
+    .order-item {
+      display: flex;
+      align-items: end;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .order-item span {
+      width: max-content;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .order-info {
+      border-bottom: 1px dashed #292b82;
+      padding: 0 40px;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .welcome-text {
+      font-weight: 700;
+      font-size: 14px;
+      text-align: start;
+      margin: 5px 0 20px;
+    }
+    .table-text {
+      font-weight: 700;
+      font-size: 14px;
+      text-align: start;
+      margin: 0 0 10px;
+    }
+    .table-group {
+      padding: 0 20px;
+      overflow: hidden;
+    }
+
+    .table-group table {
+      width: 100%;
+      margin-bottom: 40px;
+      border: 1px solid #292b82;
+      table-layout: fixed;
+    }
+
+    .table-group table th,
+    .table-group table td {
+      height: 37px;
+      text-align: center;
+      padding: 0;
+    }
+
+    table,
+    th,
+    td {
+      border-bottom: 1px solid #292b82;
+      border-top: 1px solid #292b82;
+      border-collapse: collapse;
+      border-inline-end: 1px solid #292b82;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .table-info table,
+    .table-info th,
+    .table-info td {
+      border: none;
+    }
+    .table-info {
+      padding: 0 60px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+
+    .table-info table {
+      width: 100%;
+      margin-bottom: 40px;
+      table-layout: fixed;
+    }
+
+    .table-info table th,
+    .table-info table td {
+      height: 37px;
+      text-align: start;
+      font-size: 14px;
+    }
+    .tbody-border td {
+      border: none;
+      font-size: 12px;
+    }
+    .tbody-border td:first-of-type {
+      border-inline-end: 1px solid #292b82;
+    }
+    .table-group .siganture-td {
+      border: 0;
+      border-inline-end: 1px solid #292b82;
+      font-size: 12px;
+      height: 300px;
+      vertical-align: top;
+    }
+    .pargh-certificate,
+    .signature-cont {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
+    .first-sign {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .sign-name {
+      font-weight: 500;
+    }
+    .first-sign-cont {
+      padding-top: 20px;
+    }
+    .second-sign-cont {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .second-sign-cont span {
+      flex-shrink: 0;
+    }
+    .second-sign-cont img {
+      width: 80px;
+    }
+    .line {
+      height: 2px;
+      width: 100%;
+      background-color: #292b82;
+      margin: 20px 0;
+    }
+    .notes {
+      margin-bottom: 50px;
+    }
+    .notes h3 {
+      font-weight: 700;
+      font-size: 16px;
+      margin: 0;
+    }
+    .notes ul {
+      margin: 0;
+      list-style-type: decimal;
+    }
+    .notes li {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .invoice-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 12px;
+      position: relative;
+      padding-inline-end: 20px;
+      margin-bottom: 50px;
+    }
+    .invoice-code {
+      font-weight: 500;
+      font-size: 10px;
+      position: absolute;
+      top: 50%;
+      inset-inline-end: 0;
+      transform-origin: 0 0;
+      transform: rotate(-90deg) translateX(-50%);
+    }
+    @media print {
+      .table_group {
+        padding: 0 10px;
+        overflow: hidden;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="header-invoice">
+        <figure class="logo">
+          <img src="bank.png" alt="bank-img" />
+        </figure>
+      </div>
+      <div class="order-cont">
+        <h3 class="order-head">طلب شراء</h3>
+        <div class="order-data">
+          <div class="order-item">
+            <span>التاريخ:</span>
+            <div class="order-info">22/02/2024</div>
+          </div>
+          <div class="order-item">
+            <span>رقم طلب شراء الطلب:</span>
+            <div class="order-info">wr002</div>
+          </div>
+          <div class="order-item">
+            <span>اسم المورد:</span>
+            <div class="order-info">nawras fffffffffe fffff</div>
+          </div>
+          <div class="order-item">
+            <span>رقم المعاملة:</span>
+            <div class="order-info">555555</div>
+          </div>
+          <div class="order-item" style="margin-top: 15px">
+            <span>اسم العميل:</span>
+            <div class="order-info">555555</div>
+          </div>
+        </div>
+        <p class="welcome-text">تحية طيبة وبعد...</p>
+        <p class="table-text">نرجو تزودنا بالأتي:</p>
+        <div class="table-group">
+          <table>
+            <tbody>
+              <tr>
+                <td colspan="3">مواصفات</td>
+                <td>سعر الشراء</td>
+              </tr>
+              <tr class="tbody-border">
+                <td colspan="3">plastic</td>
+                <td>15.076.000</td>
+              </tr>
+              <tr>
+                <td class="siganture-td" colspan="3">
+                  حسب كتاب تفاصيل البضاعة المذكورة بالاشارة رقم wr002
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">خمسة عشر الف وسبعة وسبعون دينار كويتى</td>
+                <td>15.076.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pargh-certificate">
+          <p class="table-text">وذلك حسب عرض سعركم والمرفق صورة منه</p>
+          <p class="table-text">يعتمد</p>
+        </div>
+        <div class="signature-cont">
+          <div class="first-sign-cont">
+            <div class="first-sign">
+              <span>مراجعة:</span>
+              <span></span>
+            </div>
+            <div class="first-sign">
+              <span>اسم المورد</span>
+              <span class="sign-name"> alnawras for plastic company</span>
+            </div>
+          </div>
+          <div class="second-sign-cont">
+            <span>توقيع المورد</span>
+            <img src="stamp.png" alt="siganture" />
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="notes">
+          <h3>ملاحظة هامة:</h3>
+          <ul>
+            <li>يرجى عدم التسليم الا بعد ان نخطركم بذلك</li>
+            <li>
+              يلتزم بنك ورية بدفع قية طلب الشراء وذلك بعد تحويل وتسليم
+              البضاعةالمذكورة مواصفتها اعلاه للعميل
+            </li>
+          </ul>
+        </div>
+        <div class="invoice-footer">
+          <span>209/1230/22/02/2024 10:48:32</span>
+          <span>RBG-if-003-11/2011</span>
+          <span class="invoice-code">w22b5555555555</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
